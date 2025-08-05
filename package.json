@@ -1,0 +1,13 @@
+{
+  "name": "meck-brothers-construction",
+  "version": "1.0.0",
+  "description": "Meck Brothers Construction website",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve ."
+  },
+  "keywords": ["construction", "remodeling", "new-jersey"],
+  "author": "Meck Brothers Construction",
+  "license": "MIT"
+} 
