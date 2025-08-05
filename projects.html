@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - Meck Brothers Construction</title>
+    <meta name="description" content="Explore our portfolio of completed construction and remodeling projects across New Jersey. From kitchen remodels to custom homes.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="components.js"></script>
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Work</h1>
+            <p>Explore our portfolio of completed projects that showcase our commitment to quality craftsmanship and attention to detail.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-page">
+        <div class="container">
+            <div class="project-filters">
+                <button class="project-filter active" data-filter="all">All Projects</button>
+                <button class="project-filter" data-filter="kitchens">Kitchens</button>
+                <button class="project-filter" data-filter="bathrooms">Bathrooms</button>
+                <button class="project-filter" data-filter="decks">Decks & Outdoor</button>
+                <button class="project-filter" data-filter="additions">Additions</button>
+                <button class="project-filter" data-filter="remodeling">Remodeling</button>
+            </div>
+
+            <div class="projects-masonry">
+                <!-- Kitchen Projects -->
+                <div class="project-card" data-category="kitchens">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Modern Kitchen Remodel">
+                        <div class="project-overlay">
+                            <h3>Modern Kitchen Remodel</h3>
+                            <p>Montclair, NJ</p>
+                            <span class="project-category">Kitchen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="kitchens">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=500&fit=crop" alt="Contemporary Kitchen">
+                        <div class="project-overlay">
+                            <h3>Contemporary Kitchen</h3>
+                            <p>Hoboken, NJ</p>
+                            <span class="project-category">Kitchen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bathroom Projects -->
+                <div class="project-card" data-category="bathrooms">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=450&fit=crop" alt="Luxury Master Bath">
+                        <div class="project-overlay">
+                            <h3>Luxury Master Bath</h3>
+                            <p>Ridgewood, NJ</p>
+                            <span class="project-category">Bathroom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="bathrooms">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Spa-Style Bathroom">
+                        <div class="project-overlay">
+                            <h3>Spa-Style Bathroom</h3>
+                            <p>Westfield, NJ</p>
+                            <span class="project-category">Bathroom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deck Projects -->
+                <div class="project-card" data-category="decks">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=500&fit=crop" alt="Custom Deck & Outdoor Living">
+                        <div class="project-overlay">
+                            <h3>Custom Deck & Outdoor Living</h3>
+                            <p>Montclair, NJ</p>
+                            <span class="project-category">Outdoor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Addition Projects -->
+                <div class="project-card" data-category="additions">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=450&fit=crop" alt="Home Addition">
+                        <div class="project-overlay">
+                            <h3>Home Addition</h3>
+                            <p>Hoboken, NJ</p>
+                            <span class="project-category">Addition</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="additions">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Second Story Addition">
+                        <div class="project-overlay">
+                            <h3>Second Story Addition</h3>
+                            <p>Ridgewood, NJ</p>
+                            <span class="project-category">Addition</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Remodeling Projects -->
+                <div class="project-card" data-category="remodeling">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=500&fit=crop" alt="Complete Home Remodel">
+                        <div class="project-overlay">
+                            <h3>Complete Home Remodel</h3>
+                            <p>Westfield, NJ</p>
+                            <span class="project-category">Remodeling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="remodeling">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=450&fit=crop" alt="Basement Renovation">
+                        <div class="project-overlay">
+                            <h3>Basement Renovation</h3>
+                            <p>Montclair, NJ</p>
+                            <span class="project-category">Remodeling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="decks">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Outdoor Kitchen">
+                        <div class="project-overlay">
+                            <h3>Outdoor Kitchen & Patio</h3>
+                            <p>Hoboken, NJ</p>
+                            <span class="project-category">Outdoor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="kitchens">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=500&fit=crop" alt="Farmhouse Kitchen">
+                        <div class="project-overlay">
+                            <h3>Farmhouse Kitchen</h3>
+                            <p>Ridgewood, NJ</p>
+                            <span class="project-category">Kitchen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="bathrooms">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=450&fit=crop" alt="Guest Bathroom">
+                        <div class="project-overlay">
+                            <h3>Guest Bathroom Remodel</h3>
+                            <p>Westfield, NJ</p>
+                            <span class="project-category">Bathroom</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="remodeling">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Living Room Renovation">
+                        <div class="project-overlay">
+                            <h3>Living Room Renovation</h3>
+                            <p>Montclair, NJ</p>
+                            <span class="project-category">Remodeling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-cta">
+                <a href="contact.html" class="btn btn-primary btn-large">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Home?</h2>
+                <p>Let's discuss your project and create something beautiful together. Get in touch for a free consultation.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Get Free Estimate</a>
+                    <a href="services.html" class="btn btn-secondary btn-large">View Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

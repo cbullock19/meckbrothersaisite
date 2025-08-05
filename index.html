@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meck Brothers Construction - Your Home Remodelers of New Jersey</title>
+    <meta name="description" content="Family-run construction and remodeling company serving New Jersey for 24+ years. Specializing in kitchens, baths, additions, and outdoor living spaces.">
+    <meta property="og:title" content="Meck Brothers Construction - Your Home Remodelers of New Jersey">
+    <meta property="og:description" content="Family-run construction and remodeling company serving New Jersey for 24+ years. Specializing in kitchens, baths, additions, and outdoor living spaces.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="components.js"></script>
+    
+    <!-- Page Loader Styles -->
+    <style>
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #b10000 0%, #880000 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        .loader-container {
+            text-align: center;
+            color: white;
+        }
+        
+        .brick-wall {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        
+        .brick-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2px;
+        }
+        
+        .brick {
+            width: 20px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 0 1px;
+            border-radius: 2px;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: brickAppear 0.3s ease-out forwards;
+        }
+        
+        .brick:nth-child(1) { animation-delay: 0.05s; }
+        .brick:nth-child(2) { animation-delay: 0.1s; }
+        .brick:nth-child(3) { animation-delay: 0.15s; }
+        .brick:nth-child(4) { animation-delay: 0.2s; }
+        .brick:nth-child(5) { animation-delay: 0.25s; }
+        .brick:nth-child(6) { animation-delay: 0.3s; }
+        
+        .brick-row:nth-child(2) .brick:nth-child(1) { animation-delay: 0.35s; }
+        .brick-row:nth-child(2) .brick:nth-child(2) { animation-delay: 0.4s; }
+        .brick-row:nth-child(2) .brick:nth-child(3) { animation-delay: 0.45s; }
+        .brick-row:nth-child(2) .brick:nth-child(4) { animation-delay: 0.5s; }
+        .brick-row:nth-child(2) .brick:nth-child(5) { animation-delay: 0.55s; }
+        .brick-row:nth-child(2) .brick:nth-child(6) { animation-delay: 0.6s; }
+        
+        .brick-row:nth-child(3) .brick:nth-child(1) { animation-delay: 0.65s; }
+        .brick-row:nth-child(3) .brick:nth-child(2) { animation-delay: 0.7s; }
+        .brick-row:nth-child(3) .brick:nth-child(3) { animation-delay: 0.75s; }
+        .brick-row:nth-child(3) .brick:nth-child(4) { animation-delay: 0.8s; }
+        .brick-row:nth-child(3) .brick:nth-child(5) { animation-delay: 0.85s; }
+        .brick-row:nth-child(3) .brick:nth-child(6) { animation-delay: 0.9s; }
+        
+        @keyframes brickAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .loader-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 20px;
+            animation: textPulse 2s ease-in-out infinite;
+        }
+        
+        .loader-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+        
+        @keyframes textPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        .loader-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+        <!-- Simple Page Loader -->
+    <div class="page-loader" id="pageLoader" style="z-index: 9999;">
+        <div class="loader-container">
+            <div class="brick-wall">
+                <div class="brick-row">
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                </div>
+                <div class="brick-row">
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                </div>
+                <div class="brick-row">
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                </div>
+            </div>
+            <div class="loader-text">Building Your Dream Project</div>
+        </div>
+    </div>
+    </div>
+
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="hero-title gradient-text">Your Home Remodelers of New Jersey</h1>
+                <p class="hero-subtitle stagger-text">
+                    <span>24+</span> <span>years</span> <span>of</span> <span>trusted</span> <span>craftsmanship,</span> <span>transforming</span> <span>homes</span> <span>across</span> <span>New</span> <span>Jersey</span> <span>with</span> <span>quality,</span> <span>integrity,</span> <span>and</span> <span>attention</span> <span>to</span> <span>every</span> <span>detail.</span>
+                </p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Start Your Project</a>
+                    <a href="projects.html" class="btn btn-secondary btn-large">View Our Work</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Services Overview -->
+    <section class="services-overview">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Design Build</h3>
+                    <p>Complete design and construction services from concept to completion.</p>
+                    <a href="services.html#design-build" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21,15 16,10 5,21"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Kitchens</h3>
+                    <p>Beautiful, functional kitchens that become the heart of your home.</p>
+                    <a href="services.html#kitchens" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <path d="M4 8h16"></path>
+                            <path d="M8 12h8"></path>
+                        </svg>
+                    </div>
+                    <h3>Baths</h3>
+                    <p>Luxurious bathroom remodels with spa-style upgrades and modern fixtures.</p>
+                    <a href="services.html#baths" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="9" cy="9" r="2"></circle>
+                            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+                        </svg>
+                    </div>
+                    <h3>Flooring & Painting</h3>
+                    <p>Premium flooring solutions and professional painting services.</p>
+                    <a href="services.html#flooring-painting" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Decks</h3>
+                    <p>Custom outdoor living spaces that extend your home's comfort.</p>
+                    <a href="services.html#decks" class="service-link">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3>Commercial</h3>
+                    <p>Professional commercial construction and renovation services.</p>
+                    <a href="services.html#commercial" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Meck Brothers</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Expertise</h3>
+                    <p>24+ years of experience in residential and commercial construction, with deep knowledge of local building codes and regulations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3>Locally Owned</h3>
+                    <p>Family-run business deeply rooted in the New Jersey community, committed to serving our neighbors with integrity and care.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"></path>
+                            <path d="M21 12c-1 0-2-1-2-2s1-2 2-2 2 1 2 2-1 2-2 2z"></path>
+                            <path d="M3 12c1 0 2-1 2-2s-1-2-2-2-2 1-2 2 1 2 2 2z"></path>
+                            <path d="M12 3c0 1-1 2-2 2s-2-1-2-2 1-2 2-2 2 1 2 2z"></path>
+                            <path d="M12 21c0-1 1-2 2-2s2 1 2 2-1 2-2 2-2-1-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Quality & Craftsmanship</h3>
+                    <p>Meticulous attention to detail and premium materials ensure your project exceeds expectations and stands the test of time.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Safety First</h3>
+                    <p>Licensed, bonded, and insured with comprehensive safety protocols to protect our team and your property throughout every project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Modern Kitchen Remodel">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Modern Kitchen Remodel</h3>
+                        <p>Montclair, NJ</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Luxury Bathroom">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Luxury Bathroom</h3>
+                        <p>Hoboken, NJ</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Custom Deck & Outdoor Living">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Custom Deck & Outdoor Living</h3>
+                        <p>Ridgewood, NJ</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop" alt="Home Addition">
+                    </div>
+                    <div class="project-overlay">
+                        <h3>Home Addition</h3>
+                        <p>Westfield, NJ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-cta">
+                <a href="projects.html" class="btn btn-secondary">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="our-values">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Own Every Detail</h3>
+                    <p>We take complete responsibility for every aspect of your project, ensuring nothing is overlooked and everything meets our high standards.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Build With Integrity</h3>
+                    <p>Honest communication, transparent pricing, and ethical business practices guide every decision we make and every relationship we build.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Respect the Process</h3>
+                    <p>We understand that remodeling can be disruptive, so we maintain clear timelines, regular communication, and a clean, organized work environment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <p>"Meck Brothers transformed our outdated kitchen into a modern masterpiece. Their attention to detail and professional service exceeded our expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Sarah & Mike Johnson</h4>
+                                <span>Montclair, NJ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The team at Meck Brothers made our bathroom remodel stress-free and beautiful. They kept us informed every step of the way."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>David & Lisa Chen</h4>
+                                <span>Hoboken, NJ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Professional, reliable, and exceptional quality. Our outdoor living space is now our favorite part of the house."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4>Robert & Maria Garcia</h4>
+                                <span>Ridgewood, NJ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Highlights -->
+    <section class="blog-highlights">
+        <div class="container">
+            <h2 class="section-title">Latest from Our Blog</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=250&fit=crop" alt="Kitchen Design Trends">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Design & Inspiration</span>
+                            <span class="blog-date">March 15, 2024</span>
+                        </div>
+                        <h3>2024 Kitchen Design Trends: What's Hot in New Jersey</h3>
+                        <p>Discover the latest kitchen design trends that are transforming homes across New Jersey, from smart storage solutions to sustainable materials.</p>
+                        <a href="blog.html" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=250&fit=crop" alt="Outdoor Living">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Outdoor Living</span>
+                            <span class="blog-date">March 10, 2024</span>
+                        </div>
+                        <h3>Creating the Perfect Outdoor Living Space for New Jersey Summers</h3>
+                        <p>Learn how to design and build an outdoor living space that maximizes your enjoyment of New Jersey's beautiful summer weather.</p>
+                        <a href="blog.html" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=250&fit=crop" alt="Home Maintenance">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Home Maintenance & Tips</span>
+                            <span class="blog-date">March 5, 2024</span>
+                        </div>
+                        <h3>Essential Spring Home Maintenance Checklist</h3>
+                        <p>Prepare your home for the warmer months with our comprehensive spring maintenance checklist for New Jersey homeowners.</p>
+                        <a href="blog.html" class="blog-link">Read More →</a>
+                    </div>
+                </article>
+            </div>
+            <div class="blog-cta">
+                <a href="blog.html" class="btn btn-secondary">Read All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="text-glow">Let's Start Your Project</h2>
+                <p class="floating-text">Ready to transform your home? Get in touch for a free consultation and estimate. Our team is ready to bring your vision to life.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Start a Project</a>
+                    <a href="about.html" class="btn btn-secondary btn-large">Learn About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
