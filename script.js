@@ -500,7 +500,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-});
 
     // Performance optimization: Debounce scroll events
     function debounce(func, wait) {
