@@ -35,19 +35,63 @@
             color: white;
         }
         
-        .loader-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-top: 3px solid white;
-            border-radius: 50%;
-            margin: 20px auto 0;
-            animation: spin 1s linear infinite;
+        .brick-wall {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
         }
         
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .brick-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2px;
+        }
+        
+        .brick {
+            width: 20px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 0 1px;
+            border-radius: 2px;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: brickAppear 0.3s ease-out forwards;
+        }
+        
+        .brick:nth-child(1) { animation-delay: 0.05s; }
+        .brick:nth-child(2) { animation-delay: 0.1s; }
+        .brick:nth-child(3) { animation-delay: 0.15s; }
+        .brick:nth-child(4) { animation-delay: 0.2s; }
+        .brick:nth-child(5) { animation-delay: 0.25s; }
+        .brick:nth-child(6) { animation-delay: 0.3s; }
+        
+        .brick-row:nth-child(2) .brick:nth-child(1) { animation-delay: 0.35s; }
+        .brick-row:nth-child(2) .brick:nth-child(2) { animation-delay: 0.4s; }
+        .brick-row:nth-child(2) .brick:nth-child(3) { animation-delay: 0.45s; }
+        .brick-row:nth-child(2) .brick:nth-child(4) { animation-delay: 0.5s; }
+        .brick-row:nth-child(2) .brick:nth-child(5) { animation-delay: 0.55s; }
+        .brick-row:nth-child(2) .brick:nth-child(6) { animation-delay: 0.6s; }
+        
+        .brick-row:nth-child(3) .brick:nth-child(1) { animation-delay: 0.65s; }
+        .brick-row:nth-child(3) .brick:nth-child(2) { animation-delay: 0.7s; }
+        .brick-row:nth-child(3) .brick:nth-child(3) { animation-delay: 0.75s; }
+        .brick-row:nth-child(3) .brick:nth-child(4) { animation-delay: 0.8s; }
+        .brick-row:nth-child(3) .brick:nth-child(5) { animation-delay: 0.85s; }
+        .brick-row:nth-child(3) .brick:nth-child(6) { animation-delay: 0.9s; }
+        
+        @keyframes brickAppear {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
         }
         
         .loader-text {
@@ -75,11 +119,36 @@
     </style>
 </head>
 <body>
-        <!-- Simple Page Loader -->
+        <!-- Brick Animation Loader -->
     <div class="page-loader" id="pageLoader">
         <div class="loader-container">
+            <div class="brick-wall">
+                <div class="brick-row">
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                </div>
+                <div class="brick-row">
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                </div>
+                <div class="brick-row">
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                    <div class="brick"></div>
+                </div>
+            </div>
             <div class="loader-text">Building Your Dream Project</div>
-            <div class="loader-spinner"></div>
         </div>
     </div>
 

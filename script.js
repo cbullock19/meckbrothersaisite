@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const pageLoader = document.getElementById('pageLoader');
         
         if (pageLoader) {
-            // Hide loader after 1.5 seconds
+            // Wait for brick animation to complete (0.9s + buffer)
             setTimeout(() => {
                 pageLoader.style.opacity = '0';
+                pageLoader.style.transition = 'opacity 0.5s ease';
                 setTimeout(() => {
                     pageLoader.style.display = 'none';
                 }, 500);
@@ -16,10 +17,20 @@ document.addEventListener('DOMContentLoaded', function() {
             // Emergency: hide on click
             document.addEventListener('click', () => {
                 pageLoader.style.opacity = '0';
+                pageLoader.style.transition = 'opacity 0.3s ease';
                 setTimeout(() => {
                     pageLoader.style.display = 'none';
                 }, 300);
             }, { once: true });
+            
+            // Force hide after 3 seconds max
+            setTimeout(() => {
+                pageLoader.style.opacity = '0';
+                pageLoader.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => {
+                    pageLoader.style.display = 'none';
+                }, 300);
+            }, 3000);
         }
     }
 });
