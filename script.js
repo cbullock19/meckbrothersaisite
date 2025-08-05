@@ -498,4 +498,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 10);
 
     window.addEventListener('scroll', debouncedScrollHandler);
-}); 
+});
