@@ -1,37 +1,60 @@
 // Page Loader (Home page only)
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🔍 DEBUG: DOMContentLoaded fired');
+    console.log('🔍 DEBUG: Current pathname:', window.location.pathname);
+    
     // Only run on home page
     if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname === '') {
+        console.log('🔍 DEBUG: On home page, looking for loader...');
         const pageLoader = document.getElementById('pageLoader');
+        console.log('🔍 DEBUG: Page loader element found:', !!pageLoader);
+        console.log('🔍 DEBUG: Page loader element:', pageLoader);
         
         if (pageLoader) {
+            console.log('🔍 DEBUG: Loader found, setting up timers...');
+            debugger; // Pause execution here for inspection
+            
             // Wait for brick animation to complete (0.9s + buffer)
-            setTimeout(() => {
+            const mainTimer = setTimeout(() => {
+                console.log('🔍 DEBUG: Main timer fired - hiding loader');
                 pageLoader.style.opacity = '0';
                 pageLoader.style.transition = 'opacity 0.5s ease';
                 setTimeout(() => {
+                    console.log('🔍 DEBUG: Final hide - setting display none');
                     pageLoader.style.display = 'none';
                 }, 500);
             }, 1500);
             
             // Emergency: hide on click
             document.addEventListener('click', () => {
+                console.log('🔍 DEBUG: Click detected - emergency hide');
+                clearTimeout(mainTimer);
                 pageLoader.style.opacity = '0';
                 pageLoader.style.transition = 'opacity 0.3s ease';
                 setTimeout(() => {
+                    console.log('🔍 DEBUG: Click emergency - setting display none');
                     pageLoader.style.display = 'none';
                 }, 300);
             }, { once: true });
             
             // Force hide after 3 seconds max
             setTimeout(() => {
+                console.log('🔍 DEBUG: Force hide timer fired');
+                clearTimeout(mainTimer);
                 pageLoader.style.opacity = '0';
                 pageLoader.style.transition = 'opacity 0.3s ease';
                 setTimeout(() => {
+                    console.log('🔍 DEBUG: Force hide - setting display none');
                     pageLoader.style.display = 'none';
                 }, 300);
             }, 3000);
+            
+            console.log('🔍 DEBUG: All timers set up');
+        } else {
+            console.log('🔍 DEBUG: ERROR - Page loader NOT found!');
         }
+    } else {
+        console.log('🔍 DEBUG: Not on home page');
     }
 
     // Mobile Navigation Toggle
