@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 3000);
         }
     }
-});
 
     // Mobile Navigation Toggle
     const navToggle = document.getElementById('nav-toggle');
@@ -480,22 +479,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
+    // Performance optimization: Debounce scroll events
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
             clearTimeout(timeout);
-            func(...args);
+            timeout = setTimeout(later, wait);
         };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
+    }
 
-// Apply debouncing to scroll events
-const debouncedScrollHandler = debounce(() => {
-    // Scroll event handlers here
-}, 10);
+    // Apply debouncing to scroll events
+    const debouncedScrollHandler = debounce(() => {
+        // Scroll event handlers here
+    }, 10);
 
-window.addEventListener('scroll', debouncedScrollHandler); 
+    window.addEventListener('scroll', debouncedScrollHandler);
+}); 
