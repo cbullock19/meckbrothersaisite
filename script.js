@@ -1,59 +1,27 @@
 // Page Loader (Home page only)
-function initializePageLoader() {
-    // Check if we're on the home page
-    console.log('Script loaded, checking page...');
-    console.log('Current pathname:', window.location.pathname);
-    
+document.addEventListener('DOMContentLoaded', function() {
+    // Only run on home page
     if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/') || window.location.pathname === '') {
-        console.log('On home page, looking for loader...');
         const pageLoader = document.getElementById('pageLoader');
-        console.log('Page loader element:', pageLoader);
         
         if (pageLoader) {
-            console.log('Loader found, setting timeout...');
-            
-            // Hide loader after 2 seconds (give more time for animation)
+            // Hide loader after 1.5 seconds
             setTimeout(() => {
-                console.log('Timeout fired, hiding loader...');
                 pageLoader.style.opacity = '0';
-                pageLoader.style.transition = 'opacity 0.5s ease';
                 setTimeout(() => {
-                    console.log('Final hide...');
                     pageLoader.style.display = 'none';
                 }, 500);
-            }, 2000);
+            }, 1500);
             
-            // Emergency: hide on any click
+            // Emergency: hide on click
             document.addEventListener('click', () => {
-                console.log('Click detected, hiding loader...');
                 pageLoader.style.opacity = '0';
-                pageLoader.style.transition = 'opacity 0.3s ease';
                 setTimeout(() => {
                     pageLoader.style.display = 'none';
                 }, 300);
             }, { once: true });
-            
-            // Additional emergency: hide after 5 seconds max
-            setTimeout(() => {
-                console.log('Emergency timeout - forcing hide...');
-                pageLoader.style.opacity = '0';
-                pageLoader.style.transition = 'opacity 0.3s ease';
-                setTimeout(() => {
-                    pageLoader.style.display = 'none';
-                }, 300);
-            }, 5000);
-        } else {
-            console.log('Page loader NOT found!');
         }
-    } else {
-        console.log('Not on home page');
     }
-}
-
-// Initialize immediately when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize loader right away
-    initializePageLoader();
 });
 
     // Mobile Navigation Toggle
