@@ -165,4 +165,9 @@ function loadComponents() {
 // Initialize components when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     loadComponents();
+    
+    // Trigger a custom event when components are loaded
+    setTimeout(() => {
+        document.dispatchEvent(new CustomEvent('componentsLoaded'));
+    }, 50);
 }); 

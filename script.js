@@ -1,5 +1,5 @@
 // Page Loader (Home page only)
-document.addEventListener('DOMContentLoaded', function() {
+function initializePageLoader() {
     // Check if we're on the home page
     console.log('Script loaded, checking page...');
     console.log('Current pathname:', window.location.pathname);
@@ -38,6 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.log('Not on home page');
     }
+}
+
+// Initialize after DOM and components are loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for components to load, then initialize loader
+    document.addEventListener('componentsLoaded', function() {
+        setTimeout(initializePageLoader, 50);
+    });
+    
+    // Fallback: if components don't load, still try after a delay
+    setTimeout(initializePageLoader, 200);
+});
 
     // Mobile Navigation Toggle
     const navToggle = document.getElementById('nav-toggle');
