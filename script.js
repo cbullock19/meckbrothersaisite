@@ -12,16 +12,16 @@ function initializePageLoader() {
         if (pageLoader) {
             console.log('Loader found, setting timeout...');
             
-            // Hide loader after 1.5 seconds (matches faster brick animation)
+            // Hide loader after 2 seconds (give more time for animation)
             setTimeout(() => {
                 console.log('Timeout fired, hiding loader...');
                 pageLoader.style.opacity = '0';
-                pageLoader.style.transition = 'opacity 0.3s ease';
+                pageLoader.style.transition = 'opacity 0.5s ease';
                 setTimeout(() => {
                     console.log('Final hide...');
                     pageLoader.style.display = 'none';
-                }, 300);
-            }, 1500);
+                }, 500);
+            }, 2000);
             
             // Emergency: hide on any click
             document.addEventListener('click', () => {
@@ -32,6 +32,16 @@ function initializePageLoader() {
                     pageLoader.style.display = 'none';
                 }, 300);
             }, { once: true });
+            
+            // Additional emergency: hide after 5 seconds max
+            setTimeout(() => {
+                console.log('Emergency timeout - forcing hide...');
+                pageLoader.style.opacity = '0';
+                pageLoader.style.transition = 'opacity 0.3s ease';
+                setTimeout(() => {
+                    pageLoader.style.display = 'none';
+                }, 300);
+            }, 5000);
         } else {
             console.log('Page loader NOT found!');
         }
@@ -40,15 +50,10 @@ function initializePageLoader() {
     }
 }
 
-// Initialize after DOM and components are loaded
+// Initialize immediately when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait for components to load, then initialize loader
-    document.addEventListener('componentsLoaded', function() {
-        setTimeout(initializePageLoader, 50);
-    });
-    
-    // Fallback: if components don't load, still try after a delay
-    setTimeout(initializePageLoader, 200);
+    // Initialize loader right away
+    initializePageLoader();
 });
 
     // Mobile Navigation Toggle
